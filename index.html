@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMAHEFASON Faratiana Ginette Valeria — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e27;
+            --bg-soft: #0d1330;
+            --card: #131a3a;
+            --card-border: #232c53;
+            --blue: #3b82f6;
+            --blue-light: #60a5fa;
+            --blue-dim: #1d4ed8;
+            --green: #22c55e;
+            --yellow: #eab308;
+            --text: #eef1fb;
+            --text-dim: #8f97b8;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.65;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .grad {
+            background: linear-gradient(90deg, var(--blue-light), var(--blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: var(--blue-light);
+            padding: 9px 20px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .avatar .dot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--green);
+            border: 2px solid var(--bg);
+        }
+
+        .brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            cursor: pointer;
+        }
+
+        nav.desktop-nav {
+            display: flex;
+            gap: 26px;
+            font-size: 0.92rem;
+            color: var(--text-dim);
+        }
+
+        nav.desktop-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        nav.desktop-nav a:hover {
+            color: var(--text);
+        }
+
+        @media (max-width:760px) {
+            nav.desktop-nav {
+                display: none;
+            }
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background:
+                radial-gradient(ellipse 700px 400px at 50% 0%, rgba(59, 130, 246, 0.12), transparent);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 5vw, 3.2rem);
+            font-weight: 800;
+            margin: 26px 0 10px;
+        }
+
+        .hero .role {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p.desc {
+            max-width: 62ch;
+            margin: 0 auto 30px;
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: 26px;
+            flex-wrap: wrap;
+            color: var(--text-dim);
+            font-size: 0.92rem;
+            margin-bottom: 26px;
+        }
+
+        .hero-contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+        }
+
+        .tech-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 26px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--blue), var(--blue-dim));
+            color: white;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text);
+        }
+
+        .photo-ring {
+            width: 150px;
+            height: 150px;
+            margin: 44px auto 0;
+            border-radius: 50%;
+            padding: 5px;
+            background: conic-gradient(from 0deg, var(--blue), transparent 60%, var(--blue));
+        }
+
+        .photo-ring .inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--blue-light);
+           
+        }
+
+        /* ---------- SECTION ---------- */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .section-head h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 16px 0 12px;
+        }
+
+        .section-head p {
+            color: var(--text-dim);
+            max-width: 52ch;
+            margin: 0 auto;
+        }
+
+        /* ---------- FILTERS ---------- */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 11px 22px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--text-dim);
+            cursor: pointer;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(90deg, var(--blue), var(--blue-dim));
+            color: white;
+            border-color: transparent;
+        }
+
+        /* ---------- PROJECT CARDS ---------- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+        }
+
+        @media (max-width:760px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: none;
+        }
+
+        .project-card.show {
+            display: block;
+        }
+
+        .project-thumb {
+            height: 170px;
+            position: relative;
+            background: linear-gradient(135deg, #1e2a5c, #101636);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: var(--green);
+            font-size: 0.72rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-body {
+            padding: 22px;
+        }
+
+        .project-cat {
+            color: var(--blue-light);
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .project-body h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .project-body p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+        }
+
+        .stack-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .stack-pills span {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-dim);
+            font-size: 0.74rem;
+            padding: 5px 11px;
+            border-radius: 999px;
+        }
+
+        .details-link {
+            color: var(--blue-light);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ---------- STACK / SKILLS CARDS ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width:760px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 26px;
+        }
+
+        .skill-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .skill-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .skill-card p {
+            color: var(--text-dim);
+            font-size: 0.86rem;
+        }
+
+        /* ---------- TIMELINE / TABS ---------- */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 36px;
+        }
+
+        .tab-btn {
+            padding: 12px 26px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--text-dim);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(90deg, var(--blue), var(--blue-dim));
+            color: white;
+            border-color: transparent;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: var(--card-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 26px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .timeline-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 22px;
+        }
+
+        .timeline-date {
+            color: var(--blue-light);
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .timeline-place {
+            color: var(--text-dim);
+            font-size: 0.84rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .timeline-card h4 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-card ul {
+            list-style: none;
+            color: var(--text-dim);
+            font-size: 0.88rem;
+        }
+
+        .timeline-card ul li {
+            padding: 4px 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .timeline-card ul li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* ---------- LANGUAGES ---------- */
+        .lang-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .lang-item {
+            text-align: center;
+        }
+
+        .lang-item svg {
+            transform: rotate(-90deg);
+        }
+
+        .lang-ring-bg {
+            fill: none;
+            stroke: var(--card-border);
+            stroke-width: 10;
+        }
+
+        .lang-ring-fg {
+            fill: none;
+            stroke: var(--blue);
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+
+        .lang-pct {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .lang-level {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* ---------- CONTACT ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        @media (max-width:640px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .contact-card .ic {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--blue-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-card .label {
+            font-size: 0.74rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .contact-card .value {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .socials a {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.82rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap header-inner">
+            <div class="brand">
+                <div class="avatar"><img src="images/val.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"><span class="dot"></span></div>
+                <span>Valeria</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#apropos">À propos</a>
+                <a href="#projets">Projets</a>
+                <a href="#competences">Compétences</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="apropos">
+        <div class="wrap">
+            <h1>RAMAHEFASON <span class="grad">Faratiana Ginette Valeria</span></h1>
+            <div class="role">Étudiante en informatique — Développement Web</div>
+            <p class="desc">
+                En 3ᵉ année de licence informatique, je m'intéresse au développement web full-stack et à l'analyse de
+                données.
+                Curieuse et rigoureuse, j'aime transformer un problème concret en une application qui fonctionne
+                vraiment.
+            </p>
+            <div class="hero-contact">
+                <span>✉️ valeriaramahefason@gmail.com</span>
+                <span>📍 Antananarivo</span>
+            </div>
+
+            <div class="tech-badges">
+                <span class="tech-badge"><span class="tech-dot" style="background:#61dafb;"></span>HTML & CSS</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#3776ab;"></span>Python</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#68a063;"></span>TypeScript</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#f0db4f;"></span>JavaScript</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#f0db4f;"></span>PHP</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#f0db4f;"></span>C#</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#336791;"></span>PostgreSQL</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#336791;"></span>MySQL</span>
+                <span class="tech-badge"><span class="tech-dot" style="background:#e34f26;"></span>Git</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a class="btn btn-primary" href="#projets">Voir mes projets →</a>
+                <a class="btn btn-ghost" href="cv.pdf.pdf" download>⬇ Télécharger le CV</a>
+            </div>
+
+            <div class="photo-ring">
+                <div class="inner"><img src="images/val.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projets">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="pill">📁 Portfolio</span>
+                <h2>Projets <span class="grad">Réalisés</span></h2>
+                <p>Une sélection de projets académiques et de stage.</p>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="stage">Stage</button>
+                <button class="filter-btn" data-filter="academique">Académique</button>
+            </div>
+
+            <div class="project-grid" id="projectGrid">
+
+                <div class="project-card show" data-cat="stage">
+                    <div class="project-thumb"><img src="images/apk web.jpg" alt="" style="width:100%;height:120%;"></div>
+                    <div class="project-body">
+                        <div class="project-cat">📁 Stage</div>
+                        <h3>Gestion d'ordre de mission</h3>
+                        <p>Application web pour la gestion d'ordre de mission</p>
+                        <div class="stack-pills"><span>React.js</span><span>Django</span><span>PostgreSQL</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card show" data-cat="academique">
+                    <div class="project-thumb"><img src="images/apk mobile.avif " alt="" style="width:100%;height:125%;"></div>
+                    <div class="project-body">
+                        <div class="project-cat">📁 Académique</div>
+                        <h3>Tantsaha 3M</h3>
+                        <p>Projet de fin de semestre : conception d'une application mobile pour moderniser les pratiques agricoles en rendant la technologie accessible aux exploitants agricoles</p>
+                    </div>
+                </div>
+
+                <div class="project-card show" data-cat="academique">
+                    <div class="project-thumb"><img src="images/apk web.jpg" alt="" style="width:100%;height:125%;"></div>
+                    <div class="project-body">
+                        <div class="project-cat">📁 Académique</div>
+                        <h3>Coupe et Couture (C&C)</h3>
+                        <p>Conception d'une application web qui permet de faire un cours en ligne concernant la coupe et couture en présentant des vidéos et des explications détaillées</p>
+                    </div>
+                </div>
+
+                <div class="project-card show" data-cat="academique">
+                    <div class="project-thumb"><img src="images/e-comm.avif" alt="" style="width:100%;height:125%;"></div>
+                    <div class="project-body">
+                        <div class="project-cat">📁 Académique</div>
+                        <h3>Event Mode</h3>
+                        <p>Conception d'un site web e-commerce permettant de faire des ventes en ligne en présentant des modes et des accessoires pour événement avec leur brève description et leur prix sur le site</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="competences" style="background:var(--bg-soft);">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="pill">🛠️ Stack</span>
+                <h2>Mes <span class="grad">compétences</span></h2>
+                <p>Les technologies que j'utilise en cours comme en projet personnel.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon" style="background:rgba(59,130,246,0.15); color:var(--blue-light);">💻</div>
+                    <h4>Front-end</h4>
+                    <p> HTML, CSS, JavaScript, TypeScript</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon" style="background:rgba(239,68,68,0.15); color:#ef4444;">🗄️</div>
+                    <h4>Back-end</h4>
+                    <p>Python, Django, PHP</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">🗃️</div>
+                    <h4>Bases de données</h4>
+                    <p>PostgreSQL, MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon" style="background:rgba(148,163,184,0.15); color:var(--text-dim);">🔧</div>
+                    <h4>Outils</h4>
+                    <p>Git</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="parcours">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="pill">🎓 Parcours</span>
+                <h2>Expérience et <span class="grad">formation</span></h2>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="exp">💼 Expérience</button>
+                <button class="tab-btn" data-tab="formation">📖 Formation</button>
+            </div>
+
+            <div class="tab-panel active" id="tab-exp">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-date">📅 Janvier - Avril 2026</div>
+                            <div class="timeline-place">📍 AMPF, Alarobia</div>
+                            <h4>⭐ Stagiaire développeuse Back-end</h4>
+                            <ul>
+                                <li>Développement d'une application web</li>
+                                <li>Gestion d'ordre de mission</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-formation">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-date">📅 2022 – 2026</div>
+                            <div class="timeline-place">📍 Institut Supérieur Polytechnique de Madagascar (ISPM),
+                                Antsobolo</div>
+                            <h4>🏅 Licence Informatique (L1 – L3)</h4>
+                            <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:10px;">Parcours complet en
+                                développement d'applications et génie logiciel de la première à la troisième année.</p>
+                            <ul>
+                                <li>Spécialisation en développement web et mobile</li>
+                                <li>Projets académiques en conditions réelles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-date">📅 2022 </div>
+                            <div class="timeline-place">📍 Lycée Antanetibe-Mahazaza</div>
+                            <h4>🏅 Baccalauréat — Série D</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-soft);">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="pill">🌐 Langues</span>
+                <h2>Mes <span class="grad">langues</span></h2>
+            </div>
+            <div class="lang-grid">
+                <div class="lang-item">
+                    <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="lang-ring-bg" cx="60" cy="60" r="50" />
+                        <circle class="lang-ring-fg" cx="60" cy="60" r="50" stroke-dasharray="314"
+                            stroke-dashoffset="0" />
+                        <text x="60" y="66" text-anchor="middle" fill="white" font-family="Poppins" font-weight="700"
+                            font-size="22" transform="rotate(90 60 60)">100%</text>
+                    </svg>
+                    <div class="lang-name">Malagasy</div>
+                    <div class="lang-level">Langue maternelle</div>
+                </div>
+                <div class="lang-item">
+                    <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="lang-ring-bg" cx="60" cy="60" r="50" />
+                        <circle class="lang-ring-fg" cx="60" cy="60" r="50" stroke-dasharray="314"
+                            stroke-dashoffset="94" />
+                        <text x="60" y="66" text-anchor="middle" fill="white" font-family="Poppins" font-weight="700"
+                            font-size="22" transform="rotate(90 60 60)">70%</text>
+                    </svg>
+                    <div class="lang-name">Français</div>
+                    <div class="lang-level">Courant</div>
+                </div>
+                <div class="lang-item">
+                    <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="lang-ring-bg" cx="60" cy="60" r="50" />
+                        <circle class="lang-ring-fg" cx="60" cy="60" r="50" stroke-dasharray="314"
+                            stroke-dashoffset="220" />
+                        <text x="60" y="66" text-anchor="middle" fill="white" font-family="Poppins" font-weight="700"
+                            font-size="22" transform="rotate(90 60 60)">30%</text>
+                    </svg>
+                    <div class="lang-name">Anglais</div>
+                    <div class="lang-level">Notions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="pill">✉️ Contact</span>
+                <h2>Entrer en <span class="grad">contact</span></h2>
+                <p>Une question ou une opportunité de stage ? N'hésitez pas à me contacter.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="ic">✉️</div>
+                    <div>
+                        <div class="label">E-mail</div>
+                        <div class="value">valeriaramahefason@gmail.com</div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="ic">📍</div>
+                    <div>
+                        <div class="label">Localisation</div>
+                        <div class="value">Antananarivo</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/valeria-ramahefason-4b29353b5" title="LinkedIn">in</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>Valeria RAMAHEFASON — Portfolio</footer>
+
+    <script>
+        // filtre projets
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(card => {
+                    card.classList.toggle('show', f === 'all' || card.dataset.cat === f);
+                });
+            });
+        });
+        // tabs expérience/formation
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
